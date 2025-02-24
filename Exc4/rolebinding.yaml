@@ -1,0 +1,55 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: DeveloperBind
+  namespace: development
+subjects:
+  - kind: User
+    name: developer
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: DeveloperRole
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: DevopsBind
+  namespace: development
+subjects:
+  - kind: User
+    name: devops
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: DevopsRole
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: AdminBind
+  namespace: development
+subjects:
+  - kind: User
+    name: admin
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: AdminRole
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: SecurityAdminBind
+  namespace: development
+subjects:
+  - kind: User
+    name: security-admin
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: SecurityAdminRole
+  apiGroup: rbac.authorization.k8s.io
